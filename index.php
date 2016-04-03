@@ -12,6 +12,11 @@
 								die( print_r( sqlsrv_errors(), true));
 								}
 
+								$sql = "select * from dbo.Dentist";
+								$stmt = sqlsrv_query($conn, $sql);
+								foreach($stmt as $s){
+									echo $s;
+								}
 								echo "hello mummy!";
 
 ?></body></html>
