@@ -2,7 +2,7 @@
 <body>
 <?php
 								$serverName = "joaquinateam12.database.windows.net";
-								$connectionInfo = array( "Database"=>"JoaquinaDental", "UID"=>"admin12", "PWD"=>"Trotters12");
+								$connectionInfo = array( "Database"=>"Joaquinateam12", "UID"=>"admin12@joaquinateam12", "PWD"=>"Trotters12");
 								$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 								if( $conn ) {
