@@ -3,18 +3,18 @@
 <?php
 								$serverName = "joaquinateam12.database.windows.net";
 								$connectionInfo = array( "Database"=>"Joaquinateam12", "UID"=>"admin12@joaquinateam12", "PWD"=>"Trotters12");
-								$conn = sqlsrv_connect( $serverName, $connectionInfo);
+								$conn = mssql_connect( $serverName, 'admin12@joaquinateam12','Trotters12');
 
 								if( $conn ) {
 								echo "Connection established.<br />";
-								}else{
-								echo "Connection could not be established.<br />";
-								die( print_r( sqlsrv_errors(), true));
 								}
+								mssql_select_db('joaquinateam12',$conn);
 
 								$sql = "select * from dbo.Dentist";
-								$stmt = sqlsrv_query($conn, $sql);
-								foreach($stmt as $s){
+								$stmt = mssql_query($sql,$conn);
+								$row= mssql_fetch_row($stmt);
+								echo "before foreach";
+								foreach($row as $s){
 									echo $s;
 								}
 								echo "hello mummy!";
